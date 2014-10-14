@@ -1,0 +1,6 @@
+{% set zookeeper = salt['grains.filter_by']({
+    'RedHat': {
+        'version': '3.4.6',
+        'checksum': '971c379ba65714fd25dc5fe8f14e9ad1',
+    },
+}, merge=salt['pillar.get']('zookeeper.lookup')) %}

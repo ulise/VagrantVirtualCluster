@@ -1,0 +1,16 @@
+storm.zookeeper.servers:
+    - "node0"
+    - "node1"
+    - "node2"
+    - "node3"
+    - "node4"
+
+nimbus.host: "node0"
+nimbus.childopts: "-Xmx1024m -Djava.net.preferIPv4Stack=true"
+
+ui.childopts: "-Xmx512m -Djava.net.preferIPv4Stack=true"
+
+supervisor.childopts: "-Djava.net.preferIPv4Stac=true"
+worker.childopts: "-Xmx512m -Djava.net.preferIPv4Stack=true"
+
+storm.local.dir: "/var/storm"

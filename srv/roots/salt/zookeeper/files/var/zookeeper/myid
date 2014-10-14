@@ -1,0 +1,1 @@
+{{ salt['grains.get']('host', '')[-1]|int + 1 }}

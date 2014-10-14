@@ -1,0 +1,7 @@
+{% set spark = salt['grains.filter_by']({
+    'RedHat': {
+        'version': '1.0.2',
+        'version_full': '1.0.2-bin-hadoop2',
+        'checksum': 'd13467a46bcb9f304cb7eaa6cd92885e',
+    },
+}, merge=salt['pillar.get']('spark.lookup')) %}

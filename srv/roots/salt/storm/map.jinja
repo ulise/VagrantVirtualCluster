@@ -1,0 +1,6 @@
+{% set storm = salt['grains.filter_by']({
+    'RedHat': {
+        'version': '0.9.2-incubating',
+        'checksum': '02f7b04a2ee11dc8b2c65862fe84df85',
+    },
+}, merge=salt['pillar.get']('storm.lookup')) %}

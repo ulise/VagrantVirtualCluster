@@ -1,0 +1,6 @@
+{% set maven = salt['grains.filter_by']({
+    'RedHat': {
+        'version': '3.2.1',
+        'checksum': 'aaef971206104e04e21a3b580d9634fe',
+    },
+}, merge=salt['pillar.get']('maven.lookup')) %}

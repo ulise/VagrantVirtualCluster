@@ -1,0 +1,10 @@
+# .bashrc
+
+if [ -f /etc/bashrc ]; then
+    source /etc/bashrc
+fi
+
+export JAVA_HOME=/usr/lib/jvm/java
+export KAFKA_HOME=/opt/kafka
+export KAFKA_BIN=$KAFKA_HOME/bin
+export PATH=$PATH:$KAFKA_BIN

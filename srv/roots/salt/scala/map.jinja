@@ -1,0 +1,6 @@
+{% set scala = salt['grains.filter_by']({
+    'RedHat': {
+        'version': '2.11.1',
+        'checksum': '2109d72413ebf4d62360bc6b4c57f981',
+    },
+}, merge=salt['pillar.get']('scala.lookup')) %}

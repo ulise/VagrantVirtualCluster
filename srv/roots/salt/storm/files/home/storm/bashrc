@@ -1,0 +1,11 @@
+# .bashrc
+
+if [ -f /etc/bashrc ]; then
+    source /etc/bashrc
+fi
+
+export JAVA_HOME=/usr/lib/jvm/java
+export STORM_HOME=/opt/storm
+export STORM_BIN=$STORM_HOME/bin
+export STORM_SBIN=$STORM_HOME/sbin
+export PATH=$PATH:$STORM_BIN:$STORM_SBIN
