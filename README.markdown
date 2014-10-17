@@ -5,6 +5,10 @@ for testing Hadoop and Hadoop related technologies.
 
 Changing the size of the cluster is certainly possible, but not documented.
 
+The Salt configurations assume the base box used has the [epel][2] repositories
+already enabled. If you don't have access to one or don't want to build one,
+you can download the one I put together [here][3].
+
 ## Overview ##
 
 The `Vagrantfile` specifies five (5) VM's that will be created when `vagrant
@@ -99,3 +103,7 @@ more information, please see the LICENSE file or, if you did not receive such a
 file, [GNU GPL][1].
 
 [1]: http://www.gnu.org/copyleft/gpl.html
+
+[2]: https://fedoraproject.org/wiki/EPEL
+
+[3]: https://www.dropbox.com/s/0qh07uzeuk7h9q4/CentOS65_Salt.box
