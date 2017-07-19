@@ -1,21 +1,33 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
 
+$puppet_script = <<SCRIPT
+#!/bin/bash
+
+export DEBIAN_FRONTEND=noninteractive
+apt-get -q -y --force-yes install puppet
+SCRIPT
+
+
+
 # Vagrantfile API/syntax version. Don't touch unless you know what you're doing!
 VAGRANTFILE_API_VERSION = "2"
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
-  config.vm.box = "CentOS65"
+  config.vm.box = "ubuntu/xenial64"
 
   config.vm.synced_folder "srv/roots/", "/srv/"
 
   config.vm.provider "virtualbox" do |v|
-    v.memory = 1024
-    v.cpus = 1
+    v.memory = 4096
+    v.cpus = 2
   end
 
+  
+  
   config.vm.define "node0", primary: true do |node0|
     node0.vm.hostname = "node0"
+    node0.vm.network :forwarded_port, guest: 60010, host:60010
     node0.vm.network :forwarded_port, guest: 50070, host:50070
     node0.vm.network :forwarded_port, guest: 4040, host:4040
     node0.vm.network :forwarded_port, guest: 8088, host:8088
@@ -57,6 +69,9 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
       virtualbox__intnet: "hadoop"
   end
 
+   config.vm.provision :shell, :inline => $puppet_script
+
+	
    config.vm.provision :puppet do |puppet|
      puppet.manifests_path = "manifests"
      puppet.module_path = "modules"

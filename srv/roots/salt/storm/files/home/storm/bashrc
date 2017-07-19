@@ -4,7 +4,7 @@ if [ -f /etc/bashrc ]; then
     source /etc/bashrc
 fi
 
-export JAVA_HOME=/usr/lib/jvm/java
+export JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-amd64
 export STORM_HOME=/opt/storm
 export STORM_BIN=$STORM_HOME/bin
 export STORM_SBIN=$STORM_HOME/sbin

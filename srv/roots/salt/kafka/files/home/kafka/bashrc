@@ -4,7 +4,7 @@ if [ -f /etc/bashrc ]; then
     source /etc/bashrc
 fi
 
-export JAVA_HOME=/usr/lib/jvm/java
+export JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-amd64
 export KAFKA_HOME=/opt/kafka
 export KAFKA_BIN=$KAFKA_HOME/bin
 export PATH=$PATH:$KAFKA_BIN

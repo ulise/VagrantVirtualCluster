@@ -1,16 +1,14 @@
 base_packages:
   pkg.latest:
     - pkgs:
-      - vim-enhanced
+      - vim
       - git
       - curl
       - rsync
       - unzip
       - tree
-      - nc
-      - java-1.7.0-openjdk
-      - java-1.7.0-openjdk-devel
-      - java-1.7.0-openjdk-src
+      - netcat
+      - openjdk-8-jdk-headless
       - python
       - python-pip
 

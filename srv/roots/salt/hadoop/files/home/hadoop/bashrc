@@ -4,7 +4,7 @@ if [ -f /etc/bashrc ]; then
     source /etc/bashrc
 fi
 
-export JAVA_HOME=/usr/lib/jvm/java
+export JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-amd64
 export HADOOP_HOME=/opt/hadoop
 export HADOOP_BIN=$HADOOP_HOME/bin
 export HADOOP_SBIN=$HADOOP_HOME/sbin

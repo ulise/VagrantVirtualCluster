@@ -61,6 +61,15 @@ kafka_install:
     - require:
       - file: /opt/kafka
 
+/etc/init.d/kafka:
+  file.managed:
+    - source: salt://kafka/files/etc/kafka
+    - user: root
+    - group: root
+    - mode: 755
+    - require:
+      - file: /opt/kafka
+
 /opt/kafka/bin/kafka-server-start.sh:
   file.managed:
     - source: salt://kafka/files/opt/kafka/bin/kafka-server-start.sh

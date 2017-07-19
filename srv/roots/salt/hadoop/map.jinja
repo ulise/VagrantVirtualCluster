@@ -1,6 +1,10 @@
 {% set hadoop = salt['grains.filter_by']({
     'RedHat': {
-        'version': '2.4.0',
-        'checksum': '1ffedf8f93e3b0a2b5d2fc528928bfa4',
+        'version': '2.7.3',
+        'checksum': '3455bb57e4b4906bbea67b58cca78fa8',
+    },
+    'Debian': {
+        'version': '2.7.3',
+        'checksum': '3455bb57e4b4906bbea67b58cca78fa8',
     },
 }, merge=salt['pillar.get']('hadoop.lookup')) %}

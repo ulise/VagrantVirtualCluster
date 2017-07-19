@@ -1,7 +1,12 @@
 {% set spark = salt['grains.filter_by']({
     'RedHat': {
-        'version': '1.0.2',
-        'version_full': '1.0.2-bin-hadoop2',
-        'checksum': 'd13467a46bcb9f304cb7eaa6cd92885e',
+        'version': '2.1.0',
+        'version_full': '2.1.0-bin-hadoop2.7',
+        'checksum': '50e73f255f9bde50789ad5bd657c7a71',
+    },
+    'Debian': {
+        'version': '2.1.0',
+        'version_full': '2.1.0-bin-hadoop2.7',
+        'checksum': '50e73f255f9bde50789ad5bd657c7a71',
     },
 }, merge=salt['pillar.get']('spark.lookup')) %}
